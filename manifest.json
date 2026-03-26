@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Temporary Chat Toolbar",
+  "version": "1.0.0",
+  "description": "Moves the temporary chat icon from the sidebar to the toolbar right side in Google Gemini.",
+  "permissions": [],
+  "host_permissions": [
+    "https://gemini.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
