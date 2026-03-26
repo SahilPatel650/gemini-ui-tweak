@@ -1,0 +1,39 @@
+/* ============================================================
+   Gemini UI Tweak — Stylesheet
+   ============================================================ */
+
+/* 1. Hide the original sidebar Temporary Chat button
+      (applied by content.js when the clone is active)         */
+.gemini-ui-tweak-sidebar-hidden {
+  display: none !important;
+}
+
+/* 2. Wrapper injected into the main chat interface             */
+.gemini-ui-tweak-temp-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 8px 0 16px;
+  padding: 0 8px;
+  animation: gemini-ui-tweak-fade-in 0.25s ease;
+}
+
+/* Entrance animation */
+@keyframes gemini-ui-tweak-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Allow the cloned button to size itself naturally
+      (sidebar layout constraints may have been inherited)      */
+.gemini-ui-tweak-temp-chat-btn > * {
+  width: auto !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+}
